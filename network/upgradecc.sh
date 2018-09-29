@@ -1,19 +1,19 @@
 #!/bin/bash
-# this script based on basic network on fabric-samples repository
+# this script based on basic network on fabric repository
 
 CC_SRC_PATH=github.com/demo
 LANGUAGE="golang" # node if chaincode written by nodejs
 VERSION=1.1
 
-# copy chaincode path to chaincode in fabric-samples
-echo "copy chaincode to docker mounted path - fabric-samples .."
-rm -Rf ../fabric-samples/chaincode/demo
-cp -Rf demo ../fabric-samples/chaincode
-ls ../fabric-samples/chaincode | grep demo
+# copy chaincode path to chaincode in fabric
+echo "copy chaincode to docker mounted path - fabric .."
+rm -Rf ../fabric/chaincode/demo
+cp -Rf demo ../fabric/chaincode
+ls ../fabric/chaincode | grep demo
 
 # start fabric network with cli
 echo "start hyperledger fabric network .."
-cd ../fabric-samples/basic-network
+cd ../fabric/basic-network
 docker-compose up -d cli
 cd -
 
